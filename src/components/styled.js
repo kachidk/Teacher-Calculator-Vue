@@ -1,5 +1,14 @@
 import styled from 'vue-styled-components';
 
+const primaryColor = '#26B2F3';
+const secondaryColor = 'red';
+const tertiaryColor = 'gray';
+const defaultColor = 'yellow';
+
+const btnProps = { Primary: Boolean,
+                   Secondary: Boolean,
+                   Tertiary: Boolean
+    }
 
 export const ContentMain = styled.div`
     display: flex;
@@ -74,3 +83,27 @@ export const InputSpanValContainer = styled.div`
 export const InputItemsRight = styled.div`
     display: flex;
 `;
+
+export const AllButton = styled('button', btnProps)`
+    background-color: ${props => props.Primary ? primaryColor : props.Secondary ? secondaryColor : props.Tertiary ? tertiaryColor : defaultColor } ;
+    color: white;
+    padding: 10px 20px;
+    border: 2px solid;
+    border-radius: 5px;
+    &:hover{
+        background-color: transparent;
+        border: 2px solid;
+        border-color: ${props => props.Primary ? primaryColor : props.Secondary ? secondaryColor : props.Tertiary ? tertiaryColor : defaultColor };
+        color: ${props => props.Primary ? primaryColor : props.Secondary ? secondaryColor : props.Tertiary ? tertiaryColor : defaultColor };
+        cursor: pointer;
+    }
+    &:focus{
+        outline: none;
+        box-shadow: none;
+    }
+`;
+
+export const AllButtonContainer = styled.div`
+    display: flex;
+`;
+

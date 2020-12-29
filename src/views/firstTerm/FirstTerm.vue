@@ -1,5 +1,179 @@
+<script>
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import {ContentMain, ContentInner, InputVal, InputName, InputContainer,AllButtonContainer,
+        GridDisplay, InputSpan, InputSpanValContainer,InputItemsRight, AllButton } from '@/components/styled.js';
+import Modal from '@/components/Modal.vue';
+import Alert from '@/components/Alert.vue';
+import styled from 'vue-styled-components';
+import {getTotal, getMathsTotal, getGrammarTotal, getCompositionTotal, getComprehensionTotal, getSpellingTotal, getSocialTotal, getScienceTotal, getHealthTotal, getGeographyTotal, getReligiousTotal, getMoralTotal, getVerbalTotal, getVocationalTotal, getQuantitativeTotal, getNigeriaTotal, getFrenchTotal, getComputerTotal, getHistoryTotal, getPoetryTotal, getCitizenshipTotal } from './firstTermLogic';
+
+
+const AlertBackground = styled.div`
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+`;
+
+const FirstAllButtonContainer = AllButtonContainer.extend`
+    justify-content: center;
+`;
+
+const ModalGrid = styled.div`
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+    @media (min-width: 768px){
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+    }    
+`;
+
+const ResultShow = styled.div`
+    display: flex;
+    font-size: 20px;
+    justify-content: center;
+    border: 1px solid gray;
+    @media(min-width: 768px){
+        font-size: 30px;
+    }
+`;
+
+export default {
+    name: "FirstTerm",
+    components: {
+        Header, Footer,
+      //styled --- ??
+        ContentMain, ContentInner,InputVal,InputName,InputContainer,
+        GridDisplay, InputSpan, InputSpanValContainer,InputItemsRight, AllButton,
+        FirstAllButtonContainer, AlertBackground, ModalGrid,ResultShow,
+      // styled --- //  
+        Modal, Alert
+    },
+    data: ()=>({
+        main: [],
+        modalState: false,
+        alertResultState: false,
+        totalTotal: [],
+        totalDivide: [],
+        totalCA: [],
+        totalExam: [],
+        totalMaths: [],
+        totalGrammar: [],
+        totalComposition: [],
+        totalComprehension: [],
+        totalSpelling: [],
+        totalSocial: [],
+        totalScience: [],
+        totalHealth: [],
+        totalGeography: [],
+        totalReligious: [],
+        totalMoral: [],
+        totalVerbal: [],
+        totalVocational: [],
+        totalQuantitative: [],
+        totalNigeria: [],
+        totalFrench: [],
+        totalComputer: [],
+        totalHistory: [],
+        totalPoetry: [],
+        totalCitizenship: []
+    }),     
+    methods: {
+      getAbc(){
+        this.getTotal()
+        this.getMathsTotal()
+        this.getGrammarTotal()
+        this.getCompositionTotal()
+        this.getComprehensionTotal()
+        this.getSpellingTotal()
+        this.getSocialTotal()
+        this.getScienceTotal()
+        this.getHealthTotal()
+        this.getGeographyTotal()
+        this.getReligiousTotal()
+        this.getMoralTotal()
+        this.getVerbalTotal()
+        this.getVocationalTotal()
+        this.getQuantitativeTotal()
+        this.getNigeriaTotal()
+        this.getFrenchTotal()
+        this.getComputerTotal()
+        this.getHistoryTotal()
+        this.getPoetryTotal()
+        this.getCitizenshipTotal()
+        this.toggleModal()
+      },
+      getResultAlert(){
+        this.toggleResultAlert();
+      },
+      toggleModal(){
+        this.modalState = !this.modalState
+      },
+      toggleResultAlert(){
+        this.alertResultState = !this.alertResultState
+      },
+      clearAbc(){
+        location.reload()
+      },
+
+      getTotal, getMathsTotal, getGrammarTotal, getCompositionTotal, getComprehensionTotal, getSpellingTotal, getSocialTotal, getScienceTotal, getHealthTotal, getGeographyTotal, getReligiousTotal, getMoralTotal, getVerbalTotal, getVocationalTotal, getQuantitativeTotal, getNigeriaTotal, getFrenchTotal, getComputerTotal, getHistoryTotal, getPoetryTotal, getCitizenshipTotal,
+
+    }
+
+}
+
+</script>
+
 <template>
+<main>
+  <Header />
   <ContentMain>
+    <div v-if="this.alertResultState">
+    <AlertBackground @click="toggleResultAlert()"/>  
+    <Alert>
+      <AllButton Secondary @click="toggleResultAlert()" slot="alertSlotButtons">Close</AllButton> 
+      <AllButton Secondary @click="toggleModal()" slot="alertSlotButtons">view</AllButton> 
+    </Alert>
+    </div>
+    <div v-if="this.modalState">
+    <Modal>
+      <AllButton Secondary @click="toggleModal()" slot="modalSlotButtons">Close</AllButton>
+      <span slot="modalSlotHeader">Results</span>
+      <ModalGrid slot="modalShowContent">
+        <ResultShow>Mathematic Total: {{ this.totalMaths }} </ResultShow>
+        <ResultShow>Grammar Total: {{ this.totalGrammar }}</ResultShow>
+        <ResultShow>Composition Total: {{ this.totalComposition }}</ResultShow>
+        <ResultShow>Comprehension Total: {{ this.totalComprehension }}</ResultShow>
+        <ResultShow>Spelling Total: {{ this.totalSpelling }}</ResultShow>
+        <ResultShow>Social Total: {{ this.totalSocial }}</ResultShow>
+        <ResultShow>Science Total: {{ this.totalScience }}</ResultShow>
+        <ResultShow>Health Total: {{ this.totalHealth }}</ResultShow>
+        <ResultShow>Geography Total: {{ this.totalGeography }}</ResultShow>
+        <ResultShow>Religious Total: {{ this.totalReligious }}</ResultShow>
+        <ResultShow>Moral Total: {{ this.totalMoral }}</ResultShow>
+        <ResultShow>Verbal Total: {{ this.totalVerbal }}</ResultShow>
+        <ResultShow>Vocational Total: {{ this.totalVocational }}</ResultShow>
+        <ResultShow>Quantitative Total: {{ this.totalQuantitative }}</ResultShow>
+        <ResultShow>Nigeria Languages Total: {{ this.totalNigeria }}</ResultShow>
+        <ResultShow>French Total: {{ this.totalFrench }}</ResultShow>
+        <ResultShow>Computer Total: {{ this.totalComputer }}</ResultShow>
+        <ResultShow>History Total: {{ this.totalHistory }}</ResultShow>
+        <ResultShow>Poetry Total: {{ this.totalPoetry }}</ResultShow>
+        <ResultShow>Citizenship Total: {{ this.totalCitizenship }}</ResultShow>
+        <ResultShow> Total: {{ this.totalTotal }}</ResultShow>
+        <ResultShow>Average: {{ this.totalDivide }}%</ResultShow>
+      </ModalGrid>   
+    </Modal>
+    </div>
       <ContentInner>
           <GridDisplay>
             <InputContainer>
@@ -281,60 +455,18 @@
                 </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
-        </GridDisplay> 
-        <button @click="getAbc()">see me</button>   <button @click="clearAbc()">clear all</button>  
-        <div v-show="hid">Error Input a number</div>
+        </GridDisplay>
+        <FirstAllButtonContainer>
+          <AllButton Primary v-on:click="getAbc()">Result</AllButton>
+          <!-- <AllButton Tertiary @click="getAbc()">Check Modal</AllButton> -->
+          <AllButton Secondary v-on:click="clearAbc()" style="margin-left: 10px;">Clear</AllButton>  
+        </FirstAllButtonContainer>   
       </ContentInner>
   </ContentMain>
+<Footer/>  
+</main>  
 </template>
 
-
-<script>
-// import Header from '../components/Header'
-import {ContentMain, ContentInner, InputVal, InputName, InputContainer,
-        GridDisplay, InputSpan, InputSpanValContainer,InputItemsRight } from '@/components/styled.js';
-
-export default {
-    name: "FirstTerm",
-    components: {
-        ContentMain, ContentInner,InputVal,InputName,InputContainer,
-        GridDisplay, InputSpan, InputSpanValContainer,InputItemsRight
-    },
-    data(){
-      return{
-        main: [],
-        hid: false
-        
-      }
-    },
-    methods: {
-      getAbc(){
-        var classList = document.querySelectorAll(".klass, .klassA");
-        this.main = Array.prototype.map.call(classList, function(element){
-          return element.value;  
-        });
-        // this.main.forEach(element => {
-        //   if (element === '') {
-        //     this.hid = !this.hid
-        //   }         
-        // });
-        let bbc = n => isNaN(n) ? 0 : n;
-
-        var sum = this.main.reduce(function(a, b) { return bbc(parseInt(a)) + bbc(parseInt(b));}, 0);
-        var divide = sum / 2
-        console.log ("the total sum", sum)
-        console.log("the divided sum ", divide)
-        console.log(classList)
-        
-      },
-      clearAbc(){
-        document.getElementById("klass1").value = ""
-        document.getElementById("klass2").value = ""
-      }
-    }
-
-}
-</script>
 
 
 <style>

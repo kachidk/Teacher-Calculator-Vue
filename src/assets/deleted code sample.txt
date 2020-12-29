@@ -1,0 +1,5 @@
+  this.main.forEach(element => {
+      if (element === '') {
+        this.hid = !this.hid
+       }         
+         });
