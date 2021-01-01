@@ -27,7 +27,7 @@ export default {
     align-items: center;
     justify-content: center;
     @media (min-width: 1440px ){   //we should still resolve this
-        position: fixed;
+       // position: fixed;
     }
 }
 .info-cover{

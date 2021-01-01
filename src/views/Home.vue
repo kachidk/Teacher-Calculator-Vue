@@ -15,7 +15,7 @@ export default {
       <div class="button-cover">
         <router-link to="/" class="button" style="padding: 12px 65px;">Home</router-link>
         <router-link to="/firstTerm" class="button b2">First Term</router-link>
-        <router-link to="#" class="button">Second Term</router-link>
+        <router-link to="/secondTerm" class="button">Second Term</router-link>
         <router-link to="#" class="button b2">Third Term</router-link>
       </div>
     </div>

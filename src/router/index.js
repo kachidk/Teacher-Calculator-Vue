@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import About from '../views/About.vue'
 import FirstTerm from '../views/firstTerm/FirstTerm.vue'
+import SecondTerm from '../views/secondTerm/SecondTerm.vue'
 
 Vue.use(VueRouter)
 
@@ -14,16 +14,15 @@ const routes = [
     component: Home
   },
   {
-    path: '/about',
-    name: 'About',
-    component: About
-  },
-  {
     path: '/firstTerm',
     name: 'FirstTerm',
     component: FirstTerm
   },
- 
+  {
+    path: '/secondTerm',
+    name: 'SecondTerm',
+    component: SecondTerm
+  },
 ]
 
 const router = new VueRouter({

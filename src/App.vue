@@ -11,7 +11,6 @@
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
-
 *{
   box-sizing: border-box;
   padding: 0;
@@ -25,6 +24,14 @@ input[type='number'] {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+
+ul{
+   list-style-type: none;
+}
+a{ 
+  text-decoration: none;
+  color: inherit;
 }
 
 </style>
