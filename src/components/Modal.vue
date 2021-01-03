@@ -14,7 +14,7 @@ const ModalMain = styled.div`
 
 const MainContent = styled.div`
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 80%;

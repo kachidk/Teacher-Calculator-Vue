@@ -2,7 +2,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import {ContentMain, ContentInner, InputVal, InputName, InputContainer,AllButtonContainer,
-        GridDisplay, InputSpan, InputSpanValContainer,InputItemsRight, AllButton } from '@/components/styled.js';
+        GridDisplay, InputSpan, InputSpanValContainer,InputItemsRight, AllButton } from '@/components/styled/styled.js';
 import Modal from '@/components/Modal.vue';
 import Alert from '@/components/Alert.vue';
 import styled from 'vue-styled-components';

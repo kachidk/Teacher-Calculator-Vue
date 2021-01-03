@@ -13,10 +13,12 @@ export default {
     <div class="content">
       <div class="title">Welcome</div>
       <div class="button-cover">
-        <router-link to="/" class="button" style="padding: 12px 65px;">Home</router-link>
-        <router-link to="/firstTerm" class="button b2">First Term</router-link>
+        <router-link to="/" class="button">Home</router-link>
+        <router-link to="/documentation" class="button">Documentation</router-link>
+        <router-link to="/firstTerm" class="button">First Term</router-link>
         <router-link to="/secondTerm" class="button">Second Term</router-link>
-        <router-link to="#" class="button b2">Third Term</router-link>
+        <router-link to="#" class="button">Third Term</router-link>
+        <router-link to="/contact" class="button">Contact</router-link>
       </div>
     </div>
   </div>
@@ -51,7 +53,11 @@ export default {
 .button{
     background-color: #3F4046;
     color: white;
-    padding: 12px 30px;
+    display: flex;
+    width: 190px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
     border: 2px solid;
     border-color: #3F4046;
     border-radius: 5px;
@@ -81,11 +87,6 @@ export default {
 .title{
     font-size: 50px;
     color: #C80139;
-}
-.b2{
-  @media (max-width: 768px){
-      padding: 12px 40px !important;
-  }
 }
 </style>
 
