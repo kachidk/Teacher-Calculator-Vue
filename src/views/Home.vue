@@ -19,7 +19,7 @@ export default {
         <router-link to="/secondTerm" class="button">Second Term</router-link>
         <router-link to="#" class="button">Third Term</router-link>
         <router-link to="/contact" class="button">Contact</router-link>
-        <router-link to="/testHome" class="button">Test Home</router-link>
+        <!-- <router-link to="/testHome" class="button">Test Home</router-link> -->
       </div>
     </div>
   </div>
