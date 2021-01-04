@@ -27,7 +27,7 @@ export default {
 .page-alignment{
     display: flex;
     flex-direction: column;
-    min-height: 55.3vh;
+    min-height: 56.5vh;
     //justify-content: space-between;
 }
 .page-header{
