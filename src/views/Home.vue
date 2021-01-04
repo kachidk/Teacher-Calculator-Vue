@@ -13,7 +13,7 @@ export default {
     <div class="content">
       <div class="title">Welcome</div>
       <div class="button-cover">
-        <router-link to="/" class="button">Home</router-link>
+        <!-- <router-link to="/" class="button">Home</router-link> -->
         <router-link to="/documentation" class="button">Documentation</router-link>
         <router-link to="/firstTerm" class="button">First Term</router-link>
         <router-link to="/secondTerm" class="button">Second Term</router-link>
