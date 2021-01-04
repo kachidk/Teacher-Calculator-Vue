@@ -7,7 +7,6 @@ import 'vue-awesome/icons/file-alt';
 import 'vue-awesome/icons/user-alt';
 
 export default {
-    name: "Header",
     data: () => ({
         sidebarState: false,
     }),
@@ -20,7 +19,7 @@ export default {
 </script>
 
 <template>
-<div>
+<main>
     <div class="header-content">
         <div class="logo">
             T-<div class="logo-inner">Calc</div>
@@ -33,12 +32,7 @@ export default {
                 <li>
                     <router-link to="/firstTerm" class="header-link">FirstTerm</router-link>
                 </li>
-                <li>
-                    <router-link to="/secondTerm" class="header-link">SecondTerm</router-link>
-                </li>
-                <li>
-                    <router-link to="/thirdTerm" class="header-link">ThirdTerm</router-link>
-                </li>
+                
             </ul>
             <div class="sidebar-open-button-cover">
                 <v-icon name="bars" @click="toggleSidebar()" class="sidebar-open-button" scale="2" />
@@ -61,7 +55,7 @@ export default {
                     <router-link to="/secondTerm" class="sidebar-button"><v-icon name="arrow-alt-circle-right" class="v-icon-li"/>SecondTerm</router-link>
                 </li>
                 <li>
-                    <router-link to="/thirdTerm" class="sidebar-button"><v-icon name="arrow-alt-circle-right" class="v-icon-li"/>ThirdTerm</router-link>
+                    <router-link to="#" class="sidebar-button"><v-icon name="arrow-alt-circle-right" class="v-icon-li"/>ThirdTerm</router-link>
                 </li>
                 <li>
                     <router-link to="/documentation" class="sidebar-button"><v-icon name="file-alt" class="v-icon-li"/>Documentation</router-link>
@@ -73,7 +67,7 @@ export default {
         </div>
     </div>
     <!-- end sidebar -->
-</div>
+</main>
 </template>
 
 
@@ -105,7 +99,7 @@ export default {
 .header-link-cover{
     display: flex;
     align-items: center;
-    margin-right: 30px;
+    margin-right: 20px;
     @media(max-width: 768px){
         margin-right: 6px;
     }
@@ -151,7 +145,7 @@ export default {
     transition: 350ms;
 }
 .sidebar-open-button{
-    margin-left: 20px;
+    margin-left: 10px;
     &-cover { & :hover{
         color: $main-color;
         }

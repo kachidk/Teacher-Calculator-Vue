@@ -28,12 +28,6 @@ export default {
             There are 3 sheets for The FirstTerm, The SecondTerm and The ThirdTerm to aid the calculation to each term session.<br/><br/> Teachers are required to carefully input scores (C.A, exam, FirstTerm Total, etc...) 
         </div>
       </div>
-      <div class="doc-card">
-        <div class="doc-header"><v-icon name="link" class="doc-header-icon" scale="2"/>Lorem ipsum dolor sit amet consectetur</div>
-        <div class="doc-body">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Impedit, fuga ullam blanditiis laudantium hic ipsam neque ab velit excepturi.
-        </div>
-      </div>
   </div>
 </div>
 <Footer />

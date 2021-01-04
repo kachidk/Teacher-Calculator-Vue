@@ -2,11 +2,11 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import {ContentMain, ContentInner, InputVal, InputName, InputContainer,AllButtonContainer,
-        GridDisplay, InputSpan, InputSpanValContainer,InputItemsRight, AllButton } from '@/components/styled/secondTermStyled.js';
+        GridDisplay, InputSpan, InputSpanValContainer,InputItemsRight, AllButton } from '@/components/styled/thirdTermStyled.js';
 import Modal from '@/components/Modal.vue';
 import Alert from '@/components/Alert.vue';
 import styled from 'vue-styled-components';
-import {getTotal, getTotalCA, getTotalExam, getTotalFirstTerm, getMathsTotal, getGrammarTotal, getCompositionTotal, getComprehensionTotal, getSpellingTotal, getSocialTotal, getScienceTotal, getHealthTotal, getGeographyTotal, getReligiousTotal, getMoralTotal, getVerbalTotal, getVocationalTotal, getQuantitativeTotal, getNigeriaTotal, getFrenchTotal, getComputerTotal, getHistoryTotal, getPoetryTotal, getCitizenshipTotal } from './secondTermLogic.js';
+import {getTotal, getTotalCA, getTotalExam, getTotalFirstTerm, getTotalSecondTerm, getMathsTotal, getGrammarTotal, getCompositionTotal, getComprehensionTotal, getSpellingTotal, getSocialTotal, getScienceTotal, getHealthTotal, getGeographyTotal, getReligiousTotal, getMoralTotal, getVerbalTotal, getVocationalTotal, getQuantitativeTotal, getNigeriaTotal, getFrenchTotal, getComputerTotal, getHistoryTotal, getPoetryTotal, getCitizenshipTotal } from './thirdTermLogic.js';
 import 'vue-awesome/icons/home';
 
 
@@ -69,6 +69,7 @@ export default {
         totalCA: [],
         totalExam: [],
         totalFirstTerm: [],
+        totalSecondTerm: [],
         totalMaths: [],
         totalGrammar: [],
         totalComposition: [],
@@ -96,6 +97,7 @@ export default {
         this.getTotalCA()
         this.getTotalExam()
         this.getTotalFirstTerm()
+        this.getTotalSecondTerm()
         this.getMathsTotal()
         this.getGrammarTotal()
         this.getCompositionTotal()
@@ -131,7 +133,7 @@ export default {
         location.reload()
       },
 
-      getTotal, getTotalCA, getTotalExam, getTotalFirstTerm, getMathsTotal, getGrammarTotal, getCompositionTotal, getComprehensionTotal, getSpellingTotal, getSocialTotal, getScienceTotal, getHealthTotal, getGeographyTotal, getReligiousTotal, getMoralTotal, getVerbalTotal, getVocationalTotal, getQuantitativeTotal, getNigeriaTotal, getFrenchTotal, getComputerTotal, getHistoryTotal, getPoetryTotal, getCitizenshipTotal,
+      getTotal, getTotalCA, getTotalExam, getTotalFirstTerm, getTotalSecondTerm, getMathsTotal, getGrammarTotal, getCompositionTotal, getComprehensionTotal, getSpellingTotal, getSocialTotal, getScienceTotal, getHealthTotal, getGeographyTotal, getReligiousTotal, getMoralTotal, getVerbalTotal, getVocationalTotal, getQuantitativeTotal, getNigeriaTotal, getFrenchTotal, getComputerTotal, getHistoryTotal, getPoetryTotal, getCitizenshipTotal,
 
     }
 
@@ -140,11 +142,11 @@ export default {
 </script>
 
 <template>
-<main>
+<div class="take-full-width">
   <Header />
   <div class="page-header">
     <v-icon name="home" scale="2"/>  
-    <div class="page-header-text">Second Term</div>
+    <div class="page-header-text">Third Term</div>
   </div>
   <ContentMain>
     <div v-if="this.alertResultState">
@@ -183,6 +185,7 @@ export default {
         <ResultShow>Total C.A: {{ this.totalCA }}</ResultShow>
         <ResultShow>Total Exam: {{ this.totalExam }}</ResultShow>
         <ResultShow>Total FirstTerm: {{ this.totalFirstTerm }}</ResultShow>
+        <ResultShow>Total SecondTerm: {{ this.totalSecondTerm }}</ResultShow>
         <ResultShow>Average: {{ this.totalDivide }}%</ResultShow>
       </ModalGrid>   
     </Modal>
@@ -204,6 +207,10 @@ export default {
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="mathsFirstTerm" id="mathsC"  />
                 </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="mathsSecondTerm" id="mathsD"  />
+                </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
 
@@ -221,6 +228,10 @@ export default {
                 <InputSpanValContainer >
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="grammarFirstTerm" id="grammarC"  />
+                </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="grammarSecondTerm" id="grammarD"  />
                 </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
@@ -240,6 +251,10 @@ export default {
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="compositionFirstTerm" id="compositionC"  />
                 </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="compositionSecondTerm" id="compositionD"  />
+                </InputSpanValContainer>
               </InputItemsRight>  
             </InputContainer>
 
@@ -257,6 +272,10 @@ export default {
                 <InputSpanValContainer >
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="comprehensionFirstTerm" id="comprehensionC"  />
+                </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="comprehensionSecondTerm" id="comprehensionD"  />
                 </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
@@ -276,6 +295,10 @@ export default {
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="spellingFirstTerm" id="spellingC"  />
                 </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="spellingSecondTerm" id="spellingD"  />
+                </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
 
@@ -293,6 +316,10 @@ export default {
                 <InputSpanValContainer >
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="socialFirstTerm" id="socialC"  />
+                </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="socialSecondTerm" id="socialD"  />
                 </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
@@ -312,6 +339,10 @@ export default {
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="scienceFirstTerm" id="scienceC"  />
                 </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="scienceSecondTerm" id="scienceD"  />
+                </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
 
@@ -329,6 +360,10 @@ export default {
                 <InputSpanValContainer >
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="healthFirstTerm" id="healthC"  />
+                </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="healthSecondTerm" id="healthD"  />
                 </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
@@ -348,6 +383,10 @@ export default {
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="geographyFirstTerm" id="geographyC"  />
                 </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="geographySecondTerm" id="geographyD"  />
+                </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
 
@@ -365,6 +404,10 @@ export default {
                 <InputSpanValContainer >
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="religiousFirstTerm" id="religiousC"  />
+                </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="religiousSecondTerm" id="religiousD"  />
                 </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
@@ -384,6 +427,10 @@ export default {
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="moralFirstTerm" id="moralC"  />
                 </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="moralSecondTerm" id="moralD"  />
+                </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
 
@@ -401,6 +448,10 @@ export default {
                 <InputSpanValContainer >
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="verbalFirstTerm" id="verbalC"  />
+                </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="verbalSecondTerm" id="verbalD"  />
                 </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
@@ -420,6 +471,10 @@ export default {
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="vocationalFirstTerm" id="vocationalC"  />
                 </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="vocationalSecondTerm" id="vocationalD"  />
+                </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
 
@@ -437,6 +492,10 @@ export default {
                 <InputSpanValContainer >
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="quantitativeFirstTerm" id="quantitativeC"  />
+                </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="quantitativeSecondTerm" id="quantitativeD"  />
                 </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
@@ -456,6 +515,10 @@ export default {
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="nigeriaFirstTerm" id="nigeriaC"  />
                 </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="nigeriaSecondTerm" id="nigeriaD"  />
+                </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
 
@@ -473,6 +536,10 @@ export default {
                 <InputSpanValContainer >
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="frenchFirstTerm" id="frenchC"  />
+                </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="frenchSecondTerm" id="frenchD"  />
                 </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
@@ -492,6 +559,10 @@ export default {
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="computerFirstTerm" id="computerC"  />
                 </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="computerSecondTerm" id="computerD"  />
+                </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
 
@@ -509,6 +580,10 @@ export default {
                 <InputSpanValContainer >
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="historyFirstTerm" id="historyC"  />
+                </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="historySecondTerm" id="historyD"  />
                 </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
@@ -528,6 +603,10 @@ export default {
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="poetryFirstTerm" id="poetryC"  />
                 </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="poetrySecondTerm" id="poetryD"  />
+                </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
 
@@ -546,21 +625,27 @@ export default {
                   <InputSpan>First Term</InputSpan>
                   <InputVal type="number" class="citizenshipFirstTerm" id="citizenshipC"  />
                 </InputSpanValContainer>
+                <InputSpanValContainer >
+                  <InputSpan>Second Term</InputSpan>
+                  <InputVal type="number" class="citizenshipSecondTerm" id="citizenshipD"  />
+                </InputSpanValContainer>
               </InputItemsRight>
             </InputContainer>
         </GridDisplay>
         <FirstAllButtonContainer>
           <AllButton Primary v-on:click="getAbc()">Result</AllButton>
-          <!-- <AllButton Tertiary @click="getAbc()">Check Modal</AllButton> -->
           <AllButton Secondary v-on:click="clearAbc()" style="margin-left: 10px;">Clear</AllButton>  
         </FirstAllButtonContainer>   
       </ContentInner>
   </ContentMain>
 <Footer/>  
-</main>  
+</div>  
 </template>
 
 <style lang="scss" scoped>
+.take-full-width{
+    width: 100%;
+}
 .page-header{
     display: flex;
     width: 100%;

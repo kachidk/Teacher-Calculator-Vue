@@ -29,6 +29,10 @@ export const ContentInner = styled.div`
     @media (min-width: 1028px){
         width: 1028px;
     }
+    @media (max-width: 768px){
+        margin-left: 0;
+        margin-right: 0;
+    }
 `;
 
 export const InputContainer = styled.div`
@@ -38,7 +42,10 @@ export const InputContainer = styled.div`
     margin-right: auto;
     margin-bottom: 1.25rem;
     align-items: center;
-    width: 18rem;
+    width: 29rem;
+    @media (max-width: 768px){
+        
+    }
 `;
 
 export const InputVal = styled.input`
@@ -62,10 +69,14 @@ export const InputName = styled.span`
 export const GridDisplay = styled.div`
     display: grid;
     grid-template-columns: 1fr;
+    overflow: auto;
 
     @media (min-width: 768px){
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+    @media (max-width: 768px){
+        padding-left: 10px;
     }
 `;
 
@@ -82,6 +93,9 @@ export const InputSpanValContainer = styled.div`
 
 export const InputItemsRight = styled.div`
     display: flex;
+    @media (max-width: 768px){
+        padding-right: 10px;
+    }
 `;
 
 export const AllButton = styled('button', btnProps)`

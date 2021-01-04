@@ -23,6 +23,7 @@ const AlertBackground = styled.div`
 
 const FirstAllButtonContainer = AllButtonContainer.extend`
     justify-content: center;
+    margin-top: 40px;
 `;
 
 const ModalGrid = styled.div`

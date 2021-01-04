@@ -1,12 +1,12 @@
 export function getTotal(){
-    var classList = document.querySelectorAll(".mathsCA, .mathsExam, .grammarCA, .grammarExam, .compositionCA, .compositionExam, .comprehensionCA, .comprehensionExam, .spellingCA, .spellingExam, .socialCA, .socialExam, .scienceCA, .scienceExam, .healthCA, .healthExam, .geographyCA, .geographyExam, .religiousCA, .religiousExam, .moralCA, .moralExam, .verbalCA, .verbalExam, .vocationalCA, .vocationalExam, .quantitativeCA, .quantitativeExam, .nigeriaCA, .nigeriaExam, .frenchCA, .frenchExam, .computerCA, .computerExam, .historyCA, .historyExam, .poetryCA, .poetryExam, .citizenshipCA, .citizenshipExam, .mathsFirstTerm, .grammarFirstTerm, .compositionFirstTerm, .comprehensionFirstTerm, .spellingFirstTerm, .socialFirstTerm, .scienceFirstTerm, .healthFirstTerm, .geographyFirstTerm, .religiousFirstTerm, .moralFirstTerm, .verbalFirstTerm, .vocationalFirstTerm, .quantitativeFirstTerm, .nigeriaFirstTerm, .frenchFirstTerm, .computerFirstTerm, .historyFirstTerm, .poetryFirstTerm, .citizenshipFirstTerm  ");
+    var classList = document.querySelectorAll(".mathsCA, .mathsExam, .grammarCA, .grammarExam, .compositionCA, .compositionExam, .comprehensionCA, .comprehensionExam, .spellingCA, .spellingExam, .socialCA, .socialExam, .scienceCA, .scienceExam, .healthCA, .healthExam, .geographyCA, .geographyExam, .religiousCA, .religiousExam, .moralCA, .moralExam, .verbalCA, .verbalExam, .vocationalCA, .vocationalExam, .quantitativeCA, .quantitativeExam, .nigeriaCA, .nigeriaExam, .frenchCA, .frenchExam, .computerCA, .computerExam, .historyCA, .historyExam, .poetryCA, .poetryExam, .citizenshipCA, .citizenshipExam, .mathsFirstTerm, .grammarFirstTerm, .compositionFirstTerm, .comprehensionFirstTerm, .spellingFirstTerm, .socialFirstTerm, .scienceFirstTerm, .healthFirstTerm, .geographyFirstTerm, .religiousFirstTerm, .moralFirstTerm, .verbalFirstTerm, .vocationalFirstTerm, .quantitativeFirstTerm, .nigeriaFirstTerm, .frenchFirstTerm, .computerFirstTerm, .historyFirstTerm, .poetryFirstTerm, .citizenshipFirstTerm, .mathsSecondTerm, .grammarSecondTerm, .compositionSecondTerm, .comprehensionSecondTerm, .spellingSecondTerm, .socialSecondTerm, .scienceSecondTerm, .healthSecondTerm, .geographySecondTerm, .religiousSecondTerm, .moralSecondTerm, .verbalSecondTerm, .vocationalSecondTerm, .quantitativeSecondTerm, .nigeriaSecondTerm, .frenchSecondTerm, .computerSecondTerm, .historySecondTerm, .poetrySecondTerm, .citizenshipSecondTerm  ");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
         let bbc = n => isNaN(n) ? 0 : n;
 
         var sum = main.reduce(function(a, b) { return bbc(parseInt(a)) + bbc(parseInt(b));}, 0);
-        var divide = sum / 20;
+        var divide = sum / 30;
         this.totalTotal = sum;
         this.totalDivide = divide;
 }
@@ -44,8 +44,19 @@ export function getTotalFirstTerm(){
         this.totalFirstTerm = sum;
 }
 
+export function getTotalSecondTerm(){
+    var classList = document.querySelectorAll(".mathsSecondTerm, .grammarSecondTerm, .compositionSecondTerm, .comprehensionSecondTerm, .spellingSecondTerm, .socialSecondTerm, .scienceSecondTerm, .healthSecondTerm, .geographySecondTerm, .religiousSecondTerm, .moralSecondTerm, .verbalSecondTerm, .vocationalSecondTerm, .quantitativeSecondTerm, .nigeriaSecondTerm, .frenchSecondTerm, .computerSecondTerm, .historySecondTerm, .poetrySecondTerm, .citizenshipSecondTerm  ");
+          const main = Array.prototype.map.call(classList, function(element){
+            return element.value;  
+          });
+          let bbc = n => isNaN(n) ? 0 : n;
+  
+          var sum = main.reduce(function(a, b) { return bbc(parseInt(a)) + bbc(parseInt(b));}, 0);
+          this.totalSecondTerm = sum;
+}
+
 export function getMathsTotal(){
-    var classList = document.querySelectorAll(".mathsCA, .mathsExam, .mathsFirstTerm");
+    var classList = document.querySelectorAll(".mathsCA, .mathsExam, .mathsFirstTerm, .mathsSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -56,7 +67,7 @@ export function getMathsTotal(){
 }
 
 export function getGrammarTotal(){
-    var classList = document.querySelectorAll(".grammarCA, .grammarExam, .grammarFirstTerm");
+    var classList = document.querySelectorAll(".grammarCA, .grammarExam, .grammarFirstTerm, .grammarSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -67,7 +78,7 @@ export function getGrammarTotal(){
 }
 
 export function getCompositionTotal(){
-    var classList = document.querySelectorAll(".compositionCA, .compositionExam, .compositionFirstTerm");
+    var classList = document.querySelectorAll(".compositionCA, .compositionExam, .compositionFirstTerm, .compositionSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -78,7 +89,7 @@ export function getCompositionTotal(){
 }
 
 export function getComprehensionTotal(){
-    var classList = document.querySelectorAll(".comprehensionCA, .comprehensionExam, .comprehensionFirstTerm");
+    var classList = document.querySelectorAll(".comprehensionCA, .comprehensionExam, .comprehensionFirstTerm, .comprehensionSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -89,7 +100,7 @@ export function getComprehensionTotal(){
 }
 
 export function getSpellingTotal(){
-    var classList = document.querySelectorAll(".spellingCA, .spellingExam, .spellingFirstTerm");
+    var classList = document.querySelectorAll(".spellingCA, .spellingExam, .spellingFirstTerm, .spellingSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -100,7 +111,7 @@ export function getSpellingTotal(){
 }
 
 export function getSocialTotal(){
-    var classList = document.querySelectorAll(".socialCA, .socialExam, .socialFirstTerm");
+    var classList = document.querySelectorAll(".socialCA, .socialExam, .socialFirstTerm, .socialSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -111,7 +122,7 @@ export function getSocialTotal(){
 }
 
 export function getScienceTotal(){
-    var classList = document.querySelectorAll(".scienceCA, .scienceExam, .scienceFirstTerm");
+    var classList = document.querySelectorAll(".scienceCA, .scienceExam, .scienceFirstTerm, .scienceSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -122,7 +133,7 @@ export function getScienceTotal(){
 }
 
 export function getHealthTotal(){
-    var classList = document.querySelectorAll(".healthCA, .healthExam, .healthFirstTerm");
+    var classList = document.querySelectorAll(".healthCA, .healthExam, .healthFirstTerm, .healthSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -133,7 +144,7 @@ export function getHealthTotal(){
 }
 
 export function getGeographyTotal(){
-    var classList = document.querySelectorAll(".geographyCA, .geographyExam, .geographyFirstTerm");
+    var classList = document.querySelectorAll(".geographyCA, .geographyExam, .geographyFirstTerm, .geographySecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -144,7 +155,7 @@ export function getGeographyTotal(){
 }
 
 export function getReligiousTotal(){
-    var classList = document.querySelectorAll(".religiousCA, .religiousExam, .religiousFirstTerm");
+    var classList = document.querySelectorAll(".religiousCA, .religiousExam, .religiousFirstTerm, .religiousSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -155,7 +166,7 @@ export function getReligiousTotal(){
 }
 
 export function getMoralTotal(){
-    var classList = document.querySelectorAll(".moralCA, .moralExam, .moralFirstTerm");
+    var classList = document.querySelectorAll(".moralCA, .moralExam, .moralFirstTerm, .moralSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -166,7 +177,7 @@ export function getMoralTotal(){
 }
 
 export function getVerbalTotal(){
-    var classList = document.querySelectorAll(".verbalCA, .verbalExam, .verbalFirstTerm");
+    var classList = document.querySelectorAll(".verbalCA, .verbalExam, .verbalFirstTerm, .verbalSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -177,7 +188,7 @@ export function getVerbalTotal(){
 }
 
 export function getVocationalTotal(){
-    var classList = document.querySelectorAll(".vocationalCA, .vocationalExam, .vocationalFirstTerm");
+    var classList = document.querySelectorAll(".vocationalCA, .vocationalExam, .vocationalFirstTerm, .vocationalSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -188,7 +199,7 @@ export function getVocationalTotal(){
 }
 
 export function getQuantitativeTotal(){
-    var classList = document.querySelectorAll(".quantitativeCA, .quantitativeExam, .quantitativeFirstTerm");
+    var classList = document.querySelectorAll(".quantitativeCA, .quantitativeExam, .quantitativeFirstTerm, .quantitativeSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -199,7 +210,7 @@ export function getQuantitativeTotal(){
 }
 
 export function getNigeriaTotal(){
-    var classList = document.querySelectorAll(".nigeriaCA, .nigeriaExam, .nigeriaFirstTerm");
+    var classList = document.querySelectorAll(".nigeriaCA, .nigeriaExam, .nigeriaFirstTerm, .nigeriaSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -210,7 +221,7 @@ export function getNigeriaTotal(){
 }
 
 export function getFrenchTotal(){
-    var classList = document.querySelectorAll(".frenchCA, .frenchExam, .frenchFirstTerm");
+    var classList = document.querySelectorAll(".frenchCA, .frenchExam, .frenchFirstTerm, .frenchSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -221,7 +232,7 @@ export function getFrenchTotal(){
 }
 
 export function getComputerTotal(){
-    var classList = document.querySelectorAll(".computerCA, .computerExam, .computerFirstTerm");
+    var classList = document.querySelectorAll(".computerCA, .computerExam, .computerFirstTerm, .computerSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -232,7 +243,7 @@ export function getComputerTotal(){
 }
 
 export function getHistoryTotal(){
-    var classList = document.querySelectorAll(".historyCA, .historyExam, .historyFirstTerm");
+    var classList = document.querySelectorAll(".historyCA, .historyExam, .historyFirstTerm, .historySecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -243,7 +254,7 @@ export function getHistoryTotal(){
 }
 
 export function getPoetryTotal(){
-    var classList = document.querySelectorAll(".poetryCA, .poetryExam, .poetryFirstTerm");
+    var classList = document.querySelectorAll(".poetryCA, .poetryExam, .poetryFirstTerm, .poetrySecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
@@ -254,7 +265,7 @@ export function getPoetryTotal(){
 }
 
 export function getCitizenshipTotal(){
-    var classList = document.querySelectorAll(".citizenshipCA, .citizenshipExam, .citizenshipFirstTerm");
+    var classList = document.querySelectorAll(".citizenshipCA, .citizenshipExam, .citizenshipFirstTerm, .citizenshipSecondTerm");
         const main = Array.prototype.map.call(classList, function(element){
           return element.value;  
         });
